@@ -18,9 +18,8 @@ git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io
 # git push -f git@github.com:Hz-Cool/Hz-Cool.github.io.git main
-git push -f git@github.com:Hz-Cool/Hz-Cool.github.io.git main
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:Hz-Cool/testNotes.git master:gh-pages
+git push -f git@github.com:Hz-Cool/blog.git master:gh-pages
 
 cd -
