@@ -1,0 +1,27 @@
+{
+  "name": "hz-cool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "vuepress dev docs --temp .temp",
+    "build": "vuepress build docs",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hz-Cool/Hz-Cool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hz-Cool/Hz-Cool/issues"
+  },
+  "homepage": "https://github.com/Hz-Cool/Hz-Cool#readme",
+  "devDependencies": {
+    "vuepress": "^1.8.2",
+    "vuepress-theme-reco": "^1.6.6"
+  }
+}
