@@ -1,8 +1,7 @@
 ---
 title: 'test 测试啊，宝'
-date: 2020-11-14 22:42:00
+date: 2010-11-14 22:42:00
 sidebar: "auto"
-sticky: 1
 ---
 
 
