@@ -13,6 +13,27 @@ module.exports = {
         lastUpdated: true,
         nav: [
             { text: 'Home', link: '/', icon: 'reco-home' },
+            {
+                text: "关于",
+                icon: "reco-message",
+                items: [
+                  {
+                    text: "关于我",
+                    link: "/about/",
+                    icon: "reco-account"
+                  },
+                  {
+                    text: "GitHub",
+                    link: "https://github.com/Hz-Cool",
+                    icon: "reco-github",
+                  },
+                  {
+                    text: "CSDN",
+                    link: "https://blog.csdn.net/qq_36267404",
+                    icon: "reco-csdn",
+                  },
+                ]
+              }
         ],
         sidebar: {
         },
