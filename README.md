@@ -2,9 +2,9 @@
 
 这是一个静态博客页面，使用VuePress生成。会时常编辑一些技术上的所见所得。
 
-以前(旧)的笔记仓库 [Notes](https://hz-cool.github.io/Notes/)
+[Notes(旧)](https://hz-cool.github.io/Notes/)
 
-立即打开该项目： [blog](https://hz-cool.github.io/blog/)
+[立即打开](https://hz-cool.github.io/blog/)
 
 <!-- 
 - HTTPS
