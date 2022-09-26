@@ -22,7 +22,7 @@
   "homepage": "https://github.com/Hz-Cool/Hz-Cool#readme",
   "devDependencies": {
     "vuepress": "^1.8.2",
-    "vuepress-theme-reco": "^1.6.6",
+    "vuepress-theme-reco": "^1.6.8",
     "vuepress-plugin-reading-progress": "^1.0.10"
   }
 }
