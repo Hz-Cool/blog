@@ -37,8 +37,8 @@ module.exports = {
         ],
         sidebar: {
         },
-        logo: './1.jpg',
-        authorAvatar: './1.jpg',
+        logo: '/1.jpg',
+        authorAvatar: '/1.jpg',
         // 搜索设置
         search: true,
         searchMaxSuggestions: 10,

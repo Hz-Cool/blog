@@ -6,6 +6,7 @@
 
 [立即打开](https://hz-cool.github.io/blog/)
 
+
 <!-- 
 - HTTPS
   - https://github.com/Hz-Cool/blog.git
@@ -31,6 +32,8 @@ git push -u origin main
 git remote add origin git@github.com:Hz-Cool/blog.git
 git branch -M main
 git push -u origin main
+
+bash deploy.sh
 ``` -->
 
 
