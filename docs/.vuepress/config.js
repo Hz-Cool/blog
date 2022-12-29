@@ -1,7 +1,7 @@
 module.exports = {
   title: "Hz-Cool",
-  //base: '/', // 【域名用/】
-  base: '/blog/', // 【Github用 /blog/】
+  base: '/', // 【域名用/】
+  // base: '/blog/', // 【Github用 /blog/】
   description: '怕什么真理无穷,进一寸有一寸的欢喜！',
   head: [
     ['link', { rel: 'icon', href: './favicon.ico' }],
