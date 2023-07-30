@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "vuepress dev docs --temp .temp",
+    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs --temp .temp",
     "build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
