@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs --temp .temp",
-    "build": "vuepress build docs",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs",
+    "docs:dev": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs",
+    "docs:build": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs"
   },
   "repository": {
     "type": "git",
