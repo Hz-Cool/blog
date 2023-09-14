@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>EchartJS 双Y轴 0刻度对齐处理 | Hz-Cool</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="./favicon.ico">
+    <meta name="description" content="怕什么真理无穷,进一寸有一寸的欢喜！">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.e3187308.css" as="style"><link rel="preload" href="/blog/assets/js/app.aef1a40d.js" as="script"><link rel="preload" href="/blog/assets/js/3.4f9f9182.js" as="script"><link rel="preload" href="/blog/assets/js/1.53751bd1.js" as="script"><link rel="preload" href="/blog/assets/js/23.866b2ee3.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.e3d7d4fb.js"><link rel="prefetch" href="/blog/assets/js/11.a3b623b0.js"><link rel="prefetch" href="/blog/assets/js/12.05ba04a5.js"><link rel="prefetch" href="/blog/assets/js/13.984b2c2a.js"><link rel="prefetch" href="/blog/assets/js/14.924e6455.js"><link rel="prefetch" href="/blog/assets/js/15.069793de.js"><link rel="prefetch" href="/blog/assets/js/16.c70e8dbb.js"><link rel="prefetch" href="/blog/assets/js/17.756e4f9f.js"><link rel="prefetch" href="/blog/assets/js/18.0aaf3a67.js"><link rel="prefetch" href="/blog/assets/js/19.a997b2e0.js"><link rel="prefetch" href="/blog/assets/js/20.b0c76f03.js"><link rel="prefetch" href="/blog/assets/js/21.c75b6c74.js"><link rel="prefetch" href="/blog/assets/js/22.c415f10a.js"><link rel="prefetch" href="/blog/assets/js/24.6f231014.js"><link rel="prefetch" href="/blog/assets/js/25.526288b0.js"><link rel="prefetch" href="/blog/assets/js/26.03833d7f.js"><link rel="prefetch" href="/blog/assets/js/27.38154057.js"><link rel="prefetch" href="/blog/assets/js/28.d0504bca.js"><link rel="prefetch" href="/blog/assets/js/29.3c2e9528.js"><link rel="prefetch" href="/blog/assets/js/30.ab6b623b.js"><link rel="prefetch" href="/blog/assets/js/31.967651aa.js"><link rel="prefetch" href="/blog/assets/js/32.8c6e0dc7.js"><link rel="prefetch" href="/blog/assets/js/33.74d1a7b9.js"><link rel="prefetch" href="/blog/assets/js/4.ee8e4815.js"><link rel="prefetch" href="/blog/assets/js/5.e9748bab.js"><link rel="prefetch" href="/blog/assets/js/6.26629915.js"><link rel="prefetch" href="/blog/assets/js/7.f7a79bd2.js"><link rel="prefetch" href="/blog/assets/js/8.4a28a3bb.js"><link rel="prefetch" href="/blog/assets/js/9.109510d7.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.e3187308.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-5bb33761><div data-v-5bb33761><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-5bb33761 data-v-5bb33761><h3 class="title" data-v-59e6cb88>Hz-Cool</h3> <p class="description" data-v-59e6cb88>怕什么真理无穷,进一寸有一寸的欢喜！</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>Hz</span>
+          
+        <span data-v-59e6cb88>2018 - </span>
+        2023
+      </a></span></div></div> <div class="hide" data-v-5bb33761><header class="navbar" data-v-5bb33761><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/1.jpg" alt="Hz-Cool" class="logo"> <span class="site-name">Hz-Cool</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于我
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/Hz-Cool" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_36267404" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-5bb33761></div> <aside class="sidebar" data-v-5bb33761><div class="personal-info-wrapper" data-v-1fad0c41 data-v-5bb33761><img src="/blog/1.jpg" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    Hz
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>22</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>15</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于我
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/Hz-Cool" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_36267404" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-5bb33761><h3 class="title" data-v-59e6cb88>EchartJS 双Y轴 0刻度对齐处理</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>Hz</span>
+          
+        <span data-v-59e6cb88>2018 - </span>
+        2023
+      </a></span></div></div> <div data-v-5bb33761><div data-v-5bb33761><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">EchartJS 双Y轴 0刻度对齐处理</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>Hz</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>9/23/2022</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>Echart</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="奇怪需求"><a href="#奇怪需求" class="header-anchor">#</a> 奇怪需求</h2> <p>Echart双Y轴，如果数据中包含负数，就会出现0刻度不对其的情况。</p> <img src="/blog/assets/images/220923_1.png" alt="0刻度不对其"> <p>现客户希望能做到0刻度线对齐。因为Excel能做到。😀<br>
+按理来说，这应该算一个常规需求，可Echart并没有相关API参数。<br></p> <h2 id="镜像-正区间部分-实现0刻度线对齐"><a href="#镜像-正区间部分-实现0刻度线对齐" class="header-anchor">#</a> 镜像 正区间部分，实现0刻度线对齐</h2> <img src="/blog/assets/images/220923_2.png" alt="镜像坐标轴中的正区间"> <p>通过镜像处理的方式，也就是把双轴中的最大值，分别设置到Min Max中。<br>
+就可以完成0刻度线对齐。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>		<span class="token comment">// 数据</span>
+			<span class="token keyword">var</span> LeftNum <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">503</span><span class="token punctuation">,</span> <span class="token number">1689</span><span class="token punctuation">,</span> <span class="token number">118</span><span class="token punctuation">,</span> <span class="token number">165</span><span class="token punctuation">,</span> <span class="token number">686</span><span class="token punctuation">,</span> <span class="token number">662</span><span class="token punctuation">,</span> <span class="token number">645</span><span class="token punctuation">,</span> <span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">113</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">143</span><span class="token punctuation">,</span> <span class="token number">740</span><span class="token punctuation">,</span> <span class="token number">182</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+			<span class="token keyword">var</span> LeftData <span class="token operator">=</span> <span class="token punctuation">{</span>
+				<span class="token literal-property property">max</span><span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token operator">...</span>LeftNum<span class="token punctuation">)</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">min</span><span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token operator">...</span>LeftNum<span class="token punctuation">)</span>
+			<span class="token punctuation">}</span>
+			<span class="token keyword">var</span> RightNum <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+			<span class="token keyword">var</span> RightData <span class="token operator">=</span> <span class="token punctuation">{</span>
+				<span class="token literal-property property">max</span><span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token operator">...</span>RightNum<span class="token punctuation">)</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">min</span><span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token operator">...</span>RightNum<span class="token punctuation">)</span>
+			<span class="token punctuation">}</span>
+			console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>LeftData<span class="token punctuation">)</span>
+			console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>RightData<span class="token punctuation">)</span>
+			<span class="token comment">// 选中项</span>
+			<span class="token keyword">var</span> selected <span class="token operator">=</span> <span class="token punctuation">{</span>
+				<span class="token literal-property property">注册</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">活跃</span><span class="token operator">:</span> <span class="token boolean">true</span>
+			<span class="token punctuation">}</span>
+
+
+			<span class="token keyword">var</span> dom <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;container&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">var</span> myChart <span class="token operator">=</span> echarts<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>dom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+			option <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+			option <span class="token operator">=</span> <span class="token punctuation">{</span>
+				<span class="token comment">//1、 格式化提示信息</span>
+				<span class="token literal-property property">tooltip</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+					<span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'axis'</span><span class="token punctuation">,</span>
+				<span class="token punctuation">}</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">toolbox</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+					<span class="token literal-property property">feature</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+						<span class="token literal-property property">dataView</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+							<span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+							<span class="token literal-property property">readOnly</span><span class="token operator">:</span> <span class="token boolean">false</span>
+						<span class="token punctuation">}</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">magicType</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+							<span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+							<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'line'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">]</span>
+						<span class="token punctuation">}</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">restore</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+							<span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">true</span>
+						<span class="token punctuation">}</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">saveAsImage</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+							<span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">true</span>
+						<span class="token punctuation">}</span>
+					<span class="token punctuation">}</span>
+				<span class="token punctuation">}</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">legend</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+					<span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'注册'</span><span class="token punctuation">,</span> <span class="token string">'活跃'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+					selected<span class="token punctuation">,</span>
+				<span class="token punctuation">}</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">grid</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+					<span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token string">'50%'</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token string">'50%'</span>
+				<span class="token punctuation">}</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">xAxis</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+					<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'category'</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+						<span class="token string">&quot;2022-08-31&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-01&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-02&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-03&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-04&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-05&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-06&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-07&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-08&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-09&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-10&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-11&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-12&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-13&quot;</span><span class="token punctuation">,</span>
+						<span class="token string">&quot;2022-09-14&quot;</span>
+					<span class="token punctuation">]</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">axisPointer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+						<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'shadow'</span>
+					<span class="token punctuation">}</span>
+				<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">yAxis</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+						<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'value'</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'注册'</span><span class="token punctuation">,</span>
+						<span class="token function-variable function">max</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+							<span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>max<span class="token punctuation">)</span> <span class="token operator">&gt;</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>min<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+								<span class="token keyword">return</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>max<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+							<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+								<span class="token keyword">return</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>min<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+							<span class="token punctuation">}</span>
+						<span class="token punctuation">}</span><span class="token punctuation">,</span>
+						<span class="token function-variable function">min</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+							<span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>max<span class="token punctuation">)</span> <span class="token operator">&gt;</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>min<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+								<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">-</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>max<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+							<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+								<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">-</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>min<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+							<span class="token punctuation">}</span>
+						<span class="token punctuation">}</span>
+					<span class="token punctuation">}</span><span class="token punctuation">,</span>
+					<span class="token punctuation">{</span>
+						<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'value'</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'活跃'</span><span class="token punctuation">,</span>
+						<span class="token function-variable function">max</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+							<span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>max<span class="token punctuation">)</span> <span class="token operator">&gt;</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>min<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+								<span class="token keyword">return</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>max<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+							<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+								<span class="token keyword">return</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>min<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+							<span class="token punctuation">}</span>
+						<span class="token punctuation">}</span><span class="token punctuation">,</span>
+						<span class="token function-variable function">min</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+							<span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>max<span class="token punctuation">)</span> <span class="token operator">&gt;</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>min<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+								<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">-</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>max<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+							<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+								<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">-</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>min<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+							<span class="token punctuation">}</span>
+						<span class="token punctuation">}</span>
+					<span class="token punctuation">}</span>
+				<span class="token punctuation">]</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">series</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+						<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'注册'</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">data</span><span class="token operator">:</span> LeftNum
+					<span class="token punctuation">}</span><span class="token punctuation">,</span>
+					<span class="token punctuation">{</span>
+						<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'活跃'</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">yAxisIndex</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">data</span><span class="token operator">:</span> RightNum
+					<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+				<span class="token punctuation">]</span>
+			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>option <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> option <span class="token operator">===</span> <span class="token string">&quot;object&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				myChart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>option<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				myChart<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'legendselectchanged'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">params</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+					option<span class="token punctuation">.</span>legend<span class="token punctuation">.</span>selected <span class="token operator">=</span> params<span class="token punctuation">.</span>selected
+					selected <span class="token operator">=</span> params<span class="token punctuation">.</span>selected
+					myChart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span><span class="token punctuation">)</span>
+			<span class="token punctuation">}</span>
+</code></pre></div><h2 id="通过比例计算最小值"><a href="#通过比例计算最小值" class="header-anchor">#</a> 通过比例计算最小值</h2> <p>通过镜像正区间的方式，能实现效果，但是不尽如意。下方留白会过多<br></p> <p>从上图中分析可以知道：<br></p> <ul><li>1.正区间双轴最大值可以从数据中算出</li> <li>2.负区间双轴最大值也是可以算出来的</li> <li>3.只有负区间的较小值需要通过比例计算</li></ul> <p>通过列方程简化后可解得：<code>min1 = max1 * min2 / max2</code></p> <ul><li>min1 max1 表示负区间中的较小值的轴，图中右轴</li> <li>min2 max2 表示负区间中的较大值的轴，图中左轴</li></ul> <img src="/blog/assets/images/220923_3.png" alt="通过比例计算最小值"> <p>注：不要去 format 计算出来的数据，不然会出现对不齐(悬空、挤出)等情况。可以用 yAxis.axisLabel.formatter 处理展示内容。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>					<span class="token comment">// 数据</span>
+		<span class="token keyword">var</span> LeftNum <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1336</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">]</span>
+		<span class="token comment">//var LeftNum = [503, 1689, 118, 165, 686, 662, 645, 320, 15, -113, 40, 143, 740, 182, -29];</span>
+
+		<span class="token keyword">var</span> LeftData <span class="token operator">=</span> <span class="token punctuation">{</span>
+			<span class="token literal-property property">max</span><span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token operator">...</span>LeftNum<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token literal-property property">min</span><span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token operator">...</span>LeftNum<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">var</span> RightNum <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">571840</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+		<span class="token comment">//var RightNum = [2, 0, 6, 2, 2, 3, 11, 6, 7, 4, 1, 2, 1, 6, 7];</span>
+
+		<span class="token keyword">var</span> RightData <span class="token operator">=</span> <span class="token punctuation">{</span>
+			<span class="token literal-property property">max</span><span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token operator">...</span>RightNum<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token literal-property property">min</span><span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token operator">...</span>RightNum<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>LeftData<span class="token punctuation">)</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>RightData<span class="token punctuation">)</span>
+		<span class="token comment">// 选中项</span>
+		<span class="token keyword">var</span> selected <span class="token operator">=</span> <span class="token punctuation">{</span>
+			<span class="token literal-property property">注册</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+			<span class="token literal-property property">活跃</span><span class="token operator">:</span> <span class="token boolean">true</span>
+		<span class="token punctuation">}</span>
+
+
+		<span class="token keyword">var</span> dom <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;container&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">var</span> myChart <span class="token operator">=</span> echarts<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>dom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+		option <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+		option <span class="token operator">=</span> <span class="token punctuation">{</span>
+			<span class="token comment">//1、 格式化提示信息</span>
+			<span class="token literal-property property">tooltip</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+				<span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'axis'</span><span class="token punctuation">,</span>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+			<span class="token literal-property property">toolbox</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+				<span class="token literal-property property">feature</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+					<span class="token literal-property property">dataView</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+						<span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">readOnly</span><span class="token operator">:</span> <span class="token boolean">false</span>
+					<span class="token punctuation">}</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">magicType</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+						<span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+						<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'line'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">]</span>
+					<span class="token punctuation">}</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">restore</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+						<span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">true</span>
+					<span class="token punctuation">}</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">saveAsImage</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+						<span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">true</span>
+					<span class="token punctuation">}</span>
+				<span class="token punctuation">}</span>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+			<span class="token literal-property property">legend</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+				<span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'注册'</span><span class="token punctuation">,</span> <span class="token string">'活跃'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+				selected<span class="token punctuation">,</span>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+			<span class="token literal-property property">grid</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+				<span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token string">'50%'</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token string">'50%'</span>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+			<span class="token literal-property property">xAxis</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+				<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'category'</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+					<span class="token string">&quot;2022-09-01&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-02&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-03&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-04&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-05&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-06&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-07&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-08&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-09&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-10&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-11&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-12&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-13&quot;</span><span class="token punctuation">,</span>
+					<span class="token string">&quot;2022-09-14&quot;</span>
+				<span class="token punctuation">]</span><span class="token punctuation">,</span>
+				<span class="token literal-property property">axisPointer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+					<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'shadow'</span>
+				<span class="token punctuation">}</span>
+			<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+			<span class="token literal-property property">yAxis</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+					<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'value'</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'注册'</span><span class="token punctuation">,</span>
+					<span class="token function-variable function">min</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+						<span class="token keyword">let</span> t <span class="token operator">=</span> <span class="token function">Min</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> <span class="token string">'left'</span><span class="token punctuation">)</span>
+						console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Left&quot;</span><span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+						<span class="token keyword">return</span> t<span class="token punctuation">;</span>
+					<span class="token punctuation">}</span><span class="token punctuation">,</span>
+					<span class="token function-variable function">max</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+						<span class="token keyword">return</span> <span class="token function">Max</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+					<span class="token punctuation">}</span>
+				<span class="token punctuation">}</span><span class="token punctuation">,</span>
+				<span class="token punctuation">{</span>
+					<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'value'</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'活跃'</span><span class="token punctuation">,</span>
+					<span class="token function-variable function">min</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+						<span class="token keyword">let</span> t <span class="token operator">=</span> <span class="token function">Min</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> <span class="token string">'right'</span><span class="token punctuation">)</span>
+						console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Right&quot;</span><span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+						<span class="token keyword">return</span> t<span class="token punctuation">;</span>
+					<span class="token punctuation">}</span><span class="token punctuation">,</span>
+					<span class="token function-variable function">max</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+						<span class="token keyword">return</span> <span class="token function">Max</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+					<span class="token punctuation">}</span>
+				<span class="token punctuation">}</span>
+			<span class="token punctuation">]</span><span class="token punctuation">,</span>
+			<span class="token literal-property property">series</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+					<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'注册'</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">data</span><span class="token operator">:</span> LeftNum
+				<span class="token punctuation">}</span><span class="token punctuation">,</span>
+				<span class="token punctuation">{</span>
+					<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'活跃'</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">yAxisIndex</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+					<span class="token literal-property property">data</span><span class="token operator">:</span> RightNum
+				<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+			<span class="token punctuation">]</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>option <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> option <span class="token operator">===</span> <span class="token string">&quot;object&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			myChart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>option<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			myChart<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'legendselectchanged'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">params</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				option<span class="token punctuation">.</span>legend<span class="token punctuation">.</span>selected <span class="token operator">=</span> params<span class="token punctuation">.</span>selected
+				selected <span class="token operator">=</span> params<span class="token punctuation">.</span>selected
+				myChart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token comment">// 计算最小值</span>
+		<span class="token keyword">function</span> <span class="token function">Min</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> direction</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>LeftData<span class="token punctuation">.</span>min <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> RightData<span class="token punctuation">.</span>min <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>direction <span class="token operator">===</span> <span class="token string">'left'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>LeftData<span class="token punctuation">.</span>min<span class="token punctuation">)</span> <span class="token operator">&gt;</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>RightData<span class="token punctuation">.</span>min<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+					<span class="token keyword">if</span><span class="token punctuation">(</span>LeftData<span class="token punctuation">.</span>min <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+					<span class="token keyword">return</span> LeftData<span class="token punctuation">.</span>min<span class="token punctuation">;</span>
+				<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+					<span class="token keyword">if</span> <span class="token punctuation">(</span>RightData<span class="token punctuation">.</span>max <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+						<span class="token keyword">return</span> <span class="token operator">-</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>LeftData<span class="token punctuation">.</span>max<span class="token punctuation">)</span>
+					<span class="token punctuation">}</span>
+					<span class="token comment">// max1 * min2 / max2</span>
+					<span class="token keyword">let</span> t <span class="token operator">=</span> LeftData<span class="token punctuation">.</span>max <span class="token operator">*</span> RightData<span class="token punctuation">.</span>min <span class="token operator">/</span> RightData<span class="token punctuation">.</span>max<span class="token punctuation">;</span>
+					<span class="token keyword">return</span> t<span class="token punctuation">;</span> <span class="token comment">// 不要 format 数据，不然会出现对不齐的情况</span>
+				<span class="token punctuation">}</span>
+			<span class="token punctuation">}</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>direction <span class="token operator">===</span> <span class="token string">'right'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>RightData<span class="token punctuation">.</span>min<span class="token punctuation">)</span> <span class="token operator">&gt;</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>LeftData<span class="token punctuation">.</span>min<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+					<span class="token keyword">return</span> RightData<span class="token punctuation">.</span>min<span class="token punctuation">;</span>
+				<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+					<span class="token keyword">if</span> <span class="token punctuation">(</span>LeftData<span class="token punctuation">.</span>max <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+						<span class="token keyword">return</span> <span class="token operator">-</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>RightData<span class="token punctuation">.</span>max<span class="token punctuation">)</span>
+					<span class="token punctuation">}</span>
+					<span class="token comment">// max1 * min2 / max2</span>
+					<span class="token keyword">let</span> t <span class="token operator">=</span> RightData<span class="token punctuation">.</span>max <span class="token operator">*</span> LeftData<span class="token punctuation">.</span>min <span class="token operator">/</span> LeftData<span class="token punctuation">.</span>max<span class="token punctuation">;</span>
+					<span class="token keyword">if</span><span class="token punctuation">(</span>t <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+					<span class="token keyword">return</span> t<span class="token punctuation">;</span> <span class="token comment">// 不要 format 数据，不然会出现对不齐的情况</span>
+				<span class="token punctuation">}</span>
+			<span class="token punctuation">}</span>
+
+		<span class="token punctuation">}</span>
+
+		<span class="token keyword">function</span> <span class="token function">Max</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;MAX&quot;</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">.</span>max <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>min<span class="token punctuation">)</span>
+			<span class="token punctuation">}</span>
+			<span class="token keyword">return</span> value<span class="token punctuation">.</span>max<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+</code></pre></div><h2 id="最后"><a href="#最后" class="header-anchor">#</a> 最后</h2> <p>学好数学是很重要滴！😀</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">12/29/2022, 4:03:50 PM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-ac050c62><li class="level-2" data-v-ac050c62><a href="/blog/views/echarts/220923.html#奇怪需求" class="sidebar-link reco-side-奇怪需求" data-v-ac050c62>奇怪需求</a></li><li class="level-2" data-v-ac050c62><a href="/blog/views/echarts/220923.html#镜像-正区间部分-实现0刻度线对齐" class="sidebar-link reco-side-镜像-正区间部分-实现0刻度线对齐" data-v-ac050c62>镜像 正区间部分，实现0刻度线对齐</a></li><li class="level-2" data-v-ac050c62><a href="/blog/views/echarts/220923.html#通过比例计算最小值" class="sidebar-link reco-side-通过比例计算最小值" data-v-ac050c62>通过比例计算最小值</a></li><li class="level-2" data-v-ac050c62><a href="/blog/views/echarts/220923.html#最后" class="sidebar-link reco-side-最后" data-v-ac050c62>最后</a></li></ul></main></div> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/blog/assets/js/app.aef1a40d.js" defer></script><script src="/blog/assets/js/3.4f9f9182.js" defer></script><script src="/blog/assets/js/1.53751bd1.js" defer></script><script src="/blog/assets/js/23.866b2ee3.js" defer></script>
+  </body>
+</html>
